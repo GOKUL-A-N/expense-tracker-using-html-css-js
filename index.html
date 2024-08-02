@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="w-full h-screen overflow-auto bg-[#111] text-white flex items-center justify-center flex-col gap-3">
+        <h1 class="w-full p-4 text-center font-bold text-[26px]">Expense Tracker</h1>
+        <form id="expense-form" class="flex flex-col w-[600px] items-center justify-center gap-3">
+            <input type="text" class="p-2 rounded-md bg-[#222] border-[#444] w-[295px]" id="expense-name" placeholder="Expense Name" required />
+            <input type="number" class="p-2 rounded-md bg-[#222] border-[#444] w-[295px]" id="expense-amount" placeholder="Amount" required />
+            <select id="expense-category" class="p-2 rounded-md bg-[#222] border-[#444] w-[295px]" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="date" class="p-2 rounded-md bg-[#222] border-[#444] w-[295px]" id="expense-date" required />
+            <button class="p-2 rounded-md bg-[#5be2b9] text-black border-[#444] w-[295px]" type="submit">Add Expense</button>
+        </form>
+        <div class="expense-table w-[600px] flex flex-col items-center justify-center">
+            <table class="w-full">
+                <thead>
+                    <tr>
+                        <th>Expense Name</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="expense-list"></tbody>
+            </table>
+            <div class="total-amount">
+                <strong>Total:</strong> $<span id="total-amount">0</span>
+            </div>
+        </div>
+        <div class="filter">
+            <label for="filter-category">Filter by Category:</label>
+            <select id="filter-category" class="p-2 rounded-md bg-[#222] border-[#444] w-[295px]">
+                <option value="All">All</option>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
